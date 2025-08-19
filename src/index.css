@@ -1,0 +1,48 @@
+/* --- Reset e Estilos Globais (src/index.css) --- */
+
+/* Importante: Verifique se este arquivo (index.css) está sendo importado 
+  no seu `src/main.jsx`, com a linha: import './index.css';
+*/
+
+/* Aplica um modelo de caixa mais intuitivo a todos os elementos */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove margens e paddings padrão que os navegadores adicionam */
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+/* Define o comportamento de rolagem suave */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Define estilos base para o corpo da página */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.6; /* Melhora a legibilidade */
+  font-family: 'Montserrat', sans-serif; /* Define a fonte padrão do site */
+  color: #333; /* Cor de texto padrão */
+}
+
+/* Define imagens como blocos e responsivas por padrão */
+img, picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove a herança de fontes para elementos de formulário */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* Remove o sublinhado padrão dos links */
+a {
+  text-decoration: none;
+  color: inherit;
+}

@@ -1,0 +1,26 @@
+/* --- Estilos do Layout Principal (src/App.css) --- */
+
+/* Estrutura que envolve todo o site */
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Garante que o footer fique no final, mesmo com pouco conteúdo */
+  background-color: #fdfdfd; /* Um branco um pouco mais suave para o fundo */
+}
+
+/* Área principal onde o conteúdo das páginas aparece */
+.main-content {
+  width: 100%;
+  /* Define uma largura máxima para o conteúdo, melhorando a leitura em telas grandes */
+  max-width: 1100px; 
+  
+  /* Centraliza a área de conteúdo na página */
+  margin-left: auto;
+  margin-right: auto;
+  
+  /* Aumenta o espaçamento vertical e lateral para dar mais respiro */
+  padding: 60px 20px; 
+  
+  /* Essencial para empurrar o footer para baixo */
+  flex-grow: 1; 
+}

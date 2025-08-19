@@ -1,0 +1,85 @@
+/* --- Variáveis de Estilo (Consistência) --- */
+:root {
+  --primary-color: #C9A948; /* Dourado */
+  --text-color: #373737;    /* Cinza Escuro */
+  --footer-background: #2d2d2d; /* Cinza Chumbo (Novo Fundo Escuro) */
+  --footer-text-color: #ccc; /* Cor de texto clara para o rodapé */
+}
+
+/* --- Container Principal do Rodapé (Tema Escuro) --- */
+.footer-container {
+  background-color: var(--footer-background);
+  color: var(--footer-text-color);
+  padding: 50px 5% 0 5%;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+.footer-content h3 {
+  font-family: 'Droid Serif', serif;
+  color: var(--primary-color); /* Títulos em dourado */
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+/* --- Seções do Rodapé --- */
+.footer-about p {
+  color: var(--footer-text-color);
+  line-height: 1.7;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: var(--footer-text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--primary-color);
+}
+
+/* --- Ícones de Contato --- */
+.social-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.social-icons a {
+  color: var(--footer-text-color);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--primary-color);
+  transform: translateY(-3px);
+}
+
+/* --- Barra Inferior do Rodapé --- */
+.footer-bottom {
+  border-top: 1px solid #444; /* Borda mais escura para o tema escuro */
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #888; /* Cor do copyright mais suave */
+}

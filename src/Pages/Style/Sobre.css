@@ -1,0 +1,129 @@
+/* --- Variáveis de Estilo (Consistência) --- */
+:root {
+  --primary-color: #C9A948; /* Dourado */
+  --text-color: #373737;    /* Cinza Escuro */
+  --background-color: #FFFFFD; /* Branco Suave */
+  --section-background: #f7f8fa;
+}
+
+/* --- Estilos Gerais --- */
+.sobre-page .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.sobre-page .section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.sobre-page .section-header h2 {
+  font-family: 'Droid Serif', serif;
+  font-size: 2.2rem;
+  color: var(--text-color);
+}
+
+/* --- Hero da Página Sobre --- */
+.sobre-hero {
+  background-color: var(--text-color);
+  color: white;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.sobre-hero .hero-title {
+  font-family: 'Droid Serif', serif;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.sobre-hero .hero-subtitle {
+  font-size: 1.2rem;
+  color: #ccc;
+  font-weight: 300;
+}
+
+/* --- Conteúdo Principal --- */
+.sobre-main-content {
+  padding: 80px 0;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.profile-pic {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.text-container h2 {
+  font-family: 'Droid Serif', serif;
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.text-container p {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+/* --- Seção de Pilares --- */
+.pilares-section {
+  background-color: var(--section-background);
+  padding: 80px 0;
+}
+
+.pilares-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.pilar-card {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  border-top: 4px solid var(--primary-color);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.pilar-card svg {
+  width: 40px;
+  height: 40px;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.pilar-card h3 {
+  font-family: 'Droid Serif', serif;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.pilar-card p {
+  color: #555;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .image-container {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+  }
+}

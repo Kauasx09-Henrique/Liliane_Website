@@ -1,0 +1,109 @@
+/* --- Variáveis de Estilo (Consistência) --- */
+:root {
+  --primary-color: #C9A948; /* Dourado */
+  --text-color: #373737;    /* Cinza Escuro */
+  --background-color: #FFFFFD; /* Branco Suave */
+}
+
+.servicos-page .section-title {
+  font-family: 'Droid Serif', serif;
+  color: var(--text-color);
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.servicos-page .section-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto 50px auto;
+}
+
+/* --- Grid 3D --- */
+.servicos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  /* Cria o espaço 3D para os cards */
+  perspective: 1000px; 
+}
+
+/* --- Card com Efeito 3D --- */
+.servico-card {
+  background-color: var(--background-color);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  /* Transição suave para o efeito 3D */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  /* Mantém o card no espaço 3D */
+  transform-style: preserve-3d;
+  border: 1px solid #eee;
+}
+
+.servico-card:hover {
+  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+  /* A mágica acontece aqui: inclina o card no eixo Y e X */
+  transform: rotateY(-10deg) rotateX(5deg) scale(1.02);
+}
+
+.servico-card-content {
+  padding: 30px;
+  text-align: center;
+  /* Move o conteúdo para "dentro" do card no eixo Z */
+  transform: translateZ(20px);
+}
+
+.servico-icon {
+  font-size: 3rem; /* Tamanho do emoji */
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.servico-card h3 {
+  font-family: 'Droid Serif', serif;
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.servico-card p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* --- Seção de Chamada para Ação (CTA) --- */
+.servicos-cta {
+  text-align: center;
+  margin-top: 60px;
+  padding: 40px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.servicos-cta p {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+/* Reutilizando o estilo do botão */
+.cta-button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 15px 35px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  display: inline-block;
+  border: 2px solid var(--primary-color);
+}
+
+.cta-button:hover {
+  background-color: transparent;
+  color: var(--primary-color);
+}

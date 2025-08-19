@@ -1,0 +1,108 @@
+/* --- Variáveis de Estilo (Consistência) --- */
+:root {
+  --primary-color: #C9A948; /* Dourado */
+  --text-color: #373737;    /* Cinza Escuro */
+  --background-color: #FFFFFD; /* Branco Suave */
+  --section-background: #f7f8fa; /* Um cinza bem claro para o fundo da seção */
+}
+
+/* --- Estilo da Página de Depoimentos (Novo Design) --- */
+.depoimentos-page {
+  background-color: var(--section-background);
+  padding: 60px 0 80px 0; /* Adiciona padding vertical à seção inteira */
+}
+
+.depoimentos-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.depoimentos-page .section-title {
+  font-family: 'Droid Serif', serif;
+  color: var(--text-color);
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.depoimentos-page .section-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto 50px auto;
+}
+
+/* --- Grid dos Depoimentos --- */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+/* --- Novo Card de Depoimento --- */
+.testimonial-card {
+  background-color: var(--background-color);
+  border-radius: 10px;
+  padding: 40px;
+  position: relative; /* Necessário para o posicionamento do ícone */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+  overflow: hidden; /* Garante que o ícone não vaze de forma estranha */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Ícone de aspas estilizado com pseudo-elemento */
+.testimonial-card::before {
+  content: '“';
+  font-family: 'Droid Serif', serif;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 6rem;
+  line-height: 1;
+  color: var(--primary-color);
+  opacity: 0.15;
+  z-index: 1;
+}
+
+.quote {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  color: #444;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  margin-bottom: 25px;
+  position: relative; /* Garante que o texto fique acima do ícone */
+  z-index: 2;
+  flex-grow: 1; /* Faz a citação ocupar o espaço */
+}
+
+.author-info {
+  text-align: left;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  position: relative;
+  z-index: 2;
+}
+
+.author-name {
+  font-weight: 600;
+  color: var(--text-color);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.author-role {
+  font-size: 0.9rem;
+  color: #777;
+  margin: 0;
+}
