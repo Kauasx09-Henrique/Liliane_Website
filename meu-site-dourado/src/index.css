@@ -1,0 +1,101 @@
+/* ======================================== */
+/* ========== ARQUIVO: index.css ========== */
+/* (Estilos Globais, Variáveis e Padrões)  */
+/* ======================================== */
+
+:root {
+  /* PALETA DE CORES PRINCIPAL */
+  --cor-fundo-escuro: #373737;
+  --cor-texto-claro: #FFFFFD;
+  --cor-primaria-dourado: #C9A948;
+  --cor-acento-verde: #206E48;
+  
+  /* FONTES */
+  --font-body: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-heading: 'Droid Serif', serif; /* Fonte para títulos */
+
+  /* CONFIGURAÇÕES GLOBAIS DE TEMA */
+  color-scheme: dark; /* Definindo o tema como escuro */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ======================================== */
+/* ========== RESET E ESTILOS BASE ========== */
+/* ======================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--cor-fundo-escuro);
+  color: var(--cor-texto-claro);
+  line-height: 1.6;
+  min-width: 320px;
+}
+
+main {
+  width: 100%;
+}
+
+/* ======================================== */
+/* ========== TIPOGRAFIA PADRÃO ========== */
+/* ======================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  color: var(--cor-primaria-dourado); /* Títulos em dourado por padrão */
+}
+
+h1 { font-size: 3.2em; }
+h2 { font-size: 2.5em; }
+h3 { font-size: 1.8em; }
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  font-weight: 500;
+  color: var(--cor-primaria-dourado);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+a:hover {
+  color: var(--cor-acento-verde);
+}
+
+/* ======================================== */
+/* ========== ELEMENTOS PADRÃO (BOTÕES) ========== */
+/* ======================================== */
+
+button {
+  display: inline-block; /* Garante comportamento correto de padding/margin */
+  border-radius: 50px; /* Bordas mais arredondadas para um visual moderno */
+  border: 2px solid var(--cor-acento-verde);
+  padding: 0.7em 1.5em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--cor-acento-verde);
+  color: var(--cor-texto-claro);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-transform: uppercase; /* Deixa o texto do botão mais padronizado */
+  letter-spacing: 0.5px;
+}
+
+button:hover {
+  background-color: transparent;
+  color: var(--cor-acento-verde);
+  transform: scale(1.03);
+}
+/* No seu arquivo index.css */

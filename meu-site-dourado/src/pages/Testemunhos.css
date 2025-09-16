@@ -1,0 +1,162 @@
+/* src/pages/Testemunhos.css (VIBRANTE E ANIMADO) */
+
+.testemunhos-section-vibrant {
+  background-color: var(--cor-fundo-calmo); /* Fundo creme suave da sua paleta */
+  padding: 6rem 2rem;
+  overflow: hidden; /* Importante para o carrossel */
+}
+
+.testemunhos-container-vibrant {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.page-title-vibrant {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  color: var(--cor-verde); /* Título em verde vibrante */
+  margin-bottom: 1rem;
+}
+
+.page-subtitle-vibrant {
+  font-size: 1.15rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+  line-height: 1.6;
+}
+
+/* ======================================== */
+/* ========== SLICK CAROUSEL E CARDS ========== */
+/* ======================================== */
+
+.carousel-wrapper {
+  position: relative;
+  margin: 0 50px; /* Espaço para as setas laterais */
+}
+
+.testemunho-slide {
+  padding: 10px; /* Padding interno para espaçamento entre os cards no carrossel */
+}
+
+.testemunho-card-vibrant {
+  background-color: var(--cor-branco);
+  border-radius: 12px;
+  padding: 3rem 2.5rem;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e0e0e0;
+  height: 100%; /* Garante que todos os cards tenham a mesma altura */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+.testemunho-card-vibrant:hover {
+  transform: translateY(-8px);
+  border-color: var(--cor-dourado);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+.quote-icon-container {
+  color: var(--cor-dourado); /* Ícone de aspas em dourado */
+  margin-bottom: 1.5rem;
+  height: 50px;
+}
+
+.quote-icon {
+  font-size: 2.5rem;
+}
+
+.testemunho-texto-vibrant {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333;
+  font-style: italic;
+  margin-bottom: 2rem;
+  flex-grow: 1; /* Permite que o texto ocupe o espaço disponível */
+}
+
+.autor-info-vibrant {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+.autor-nome-vibrant {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--cor-verde); /* Nome do autor em verde */
+  margin: 0 0 0.2rem;
+  font-weight: 600;
+}
+
+.autor-cargo-vibrant {
+  font-size: 0.95rem;
+  color: #777;
+}
+
+/* ======================================== */
+/* ========== ESTILOS DO SLICK CAROUSEL (Setas e Pontos) ========== */
+/* ======================================== */
+
+/* Setas de navegação */
+.slick-prev, .slick-next {
+  width: 50px;
+  height: 50px;
+  z-index: 10;
+}
+
+.slick-prev::before, .slick-next::before {
+  font-family: "Font Awesome 5 Free"; /* Usa a fonte FontAwesome */
+  font-weight: 900;
+  font-size: 2rem;
+  color: var(--cor-verde); /* Cor das setas */
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.slick-prev:hover::before, .slick-next:hover::before {
+  opacity: 1;
+  color: var(--cor-dourado); /* Cor no hover */
+}
+
+/* Posição das setas */
+.slick-prev { left: -50px; }
+.slick-next { right: -50px; }
+
+/* Pontos de navegação (dots) */
+.slick-dots {
+  bottom: -40px;
+}
+
+.slick-dots li button::before {
+  font-size: 12px;
+  color: #ccc; /* Cor dos pontos inativos */
+  opacity: 1;
+}
+
+.slick-dots li.slick-active button::before {
+  color: var(--cor-verde); /* Cor do ponto ativo */
+  opacity: 1;
+}
+
+/* ======================================== */
+/* ========== RESPONSIVIDADE ========== */
+/* ======================================== */
+@media (max-width: 992px) {
+  .carousel-wrapper {
+    margin: 0; /* Remove margem para setas em telas menores */
+  }
+  .slick-prev, .slick-next {
+    display: none !important; /* Esconde setas em telas menores se preferir */
+  }
+}
+
+@media (max-width: 768px) {
+  .testemunho-card-vibrant {
+    padding: 2rem 1.5rem;
+  }
+}

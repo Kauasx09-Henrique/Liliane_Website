@@ -1,0 +1,95 @@
+// src/pages/Home.js
+
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import './Home.css'; // O CSS que vamos renovar logo abaixo
+
+function Home() {
+  // Inicializa a biblioteca AOS assim que o componente é montado
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Duração da animação em milissegundos
+      once: true,     // Animação acontece apenas uma vez
+      offset: 100,    // "Gatilho" da animação um pouco antes do elemento aparecer
+    });
+  }, []);
+
+  return (
+    <div className="home-page">
+      {/* ========== SEÇÃO HERO ========== */}
+      <section className="hero-section-v2">
+        <div className="hero-overlay"></div>
+        <div className="hero-content-v2" data-aos="zoom-in">
+          <h1>Sua Aposentadoria Planejada, Seu Futuro Garantido.</h1>
+          <p>Assessoria completa e humanizada para você navegar pelo INSS sem estresse e com a certeza do melhor benefício.</p>
+          <button className="cta-button-hero">Quero planejar meu futuro</button>
+        </div>
+      </section>
+
+      {/* ========== SEÇÃO DIFERENCIAIS (TEMA CLARO) ========== */}
+      <section className="features-section-light">
+        <h2 className="section-title" data-aos="fade-up">Diferenciais que Fazem a Diferença</h2>
+        <div className="features-grid">
+          <div className="feature-card" data-aos="fade-up" data-aos-delay="100">
+            <div className="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            </div>
+            <h3>Agilidade e Eficiência</h3>
+            <p>Analisamos seu caso e traçamos a melhor estratégia para acelerar seu processo, evitando atrasos desnecessários.</p>
+          </div>
+          <div className="feature-card" data-aos="fade-up" data-aos-delay="200">
+            <div className="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" /></svg>
+            </div>
+            <h3>Segurança e Precisão</h3>
+            <p>Nossa análise detalhada de documentos e legislação garante que seu requerimento seja feito corretamente da primeira vez.</p>
+          </div>
+          <div className="feature-card" data-aos="fade-up" data-aos-delay="300">
+            <div className="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9 9.563C9 9.252 9.252 9 9.563 9h4.874c.311 0 .563.252.563.563v4.874c0 .311-.252.563-.563.563H9.564A.562.562 0 019 14.437V9.564z" /></svg>
+            </div>
+            <h3>Comunicação Clara</h3>
+            <p>Traduzimos o "previdenciarês" para você. Entenda cada etapa do seu processo sem jargões complicados.</p>
+          </div>
+        </div>
+      </section>
+      
+      {/* ========== SEÇÃO DE RESULTADOS (TEMA ESCURO) ========== */}
+      <section className="stats-section">
+        <div className="stat-item" data-aos="fade-up">
+          <span className="stat-number">500+</span>
+          <span className="stat-label">Casos Analisados</span>
+        </div>
+        <div className="stat-item" data-aos="fade-up" data-aos-delay="150">
+          <span className="stat-number">10+</span>
+          <span className="stat-label">Anos de Experiência</span>
+        </div>
+        <div className="stat-item" data-aos="fade-up" data-aos-delay="300">
+          <span className="stat-number">98%</span>
+          <span className="stat-label">de Clientes Satisfeitos</span>
+        </div>
+      </section>
+
+      {/* ========== SEÇÃO PREVIA DE TESTEMUNHO (TEMA CLARO) ========== */}
+      <section className="testimonial-preview-section">
+        <div className="testimonial-content" data-aos="fade-right">
+          <blockquote>
+            "Eu estava completamente perdida sobre como contribuir corretamente para o INSS. O planejamento previdenciário que recebi me deu clareza e, principalmente, segurança para o futuro. Serviço excepcional!"
+          </blockquote>
+          <cite>– João P., Autônomo</cite>
+        </div>
+      </section>
+
+      {/* ========== SEÇÃO FINAL CTA (TEMA VERDE) ========== */}
+      <section className="final-cta-section">
+        <div data-aos="zoom-in-up">
+          <h2>Pronto para dar o primeiro passo?</h2>
+          <p>Agende uma conversa inicial e descubra como podemos construir juntos o seu caminho para uma aposentadoria tranquila.</p>
+          <button className="cta-button-final">Fale com um especialista agora</button>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+export default Home;

@@ -1,0 +1,27 @@
+/* ======================================== */
+/* ========== ARQUIVO: App.css ========== */
+/* (Layout Principal da Aplicação)       */
+/* ======================================== */
+
+/* O container principal da aplicação.
+  'min-height: 100vh' garante que a página ocupe a tela toda,
+  útil para colocar o footer no final da página.
+*/
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/*
+  Esta classe pode ser usada em um 'div' dentro do seu App.js
+  para centralizar e limitar a largura do conteúdo principal.
+  É útil para páginas como 'Sobre', 'Contato', etc.
+  Páginas como a 'Home' podem ignorar isso e usar 'width: 100%'.
+*/
+.main-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}

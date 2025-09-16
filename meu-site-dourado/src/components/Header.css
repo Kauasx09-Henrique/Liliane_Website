@@ -1,0 +1,190 @@
+/* src/components/Header.css */
+
+/* Definição de variáveis de cor atualizadas para tema claro */
+:root {
+  --dourado-principal: #C9A948; /* Dourado da sua paleta */
+  --texto-claro: #FFFFFD; /* Branco da sua paleta */
+  --fundo-claro: rgba(255, 255, 255, 0.95); /* Fundo branco levemente transparente */
+  --borda-sutil-clara: #e0e0e0; /* Borda cinza bem clara */
+  --texto-escuro: #373737; /* Cinza escuro da sua paleta (para links e texto principal) */
+  --cor-verde: #206E48; /* Verde da sua paleta */
+
+  /* Cores para o menu mobile (pode ser o cinza escuro para contraste) */
+  --fundo-menu-mobile: #373737;
+  --texto-menu-mobile: #FFFFFD;
+}
+
+/* --- ESTRUTURA BASE --- */
+.header {
+  background-color: var(--fundo-claro);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+  width: 100%;
+  height: 80px; /* Aumentado um pouco para acomodar a logo */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--borda-sutil-clara);
+  padding: 0 5%;
+  box-sizing: border-box;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Sombra suave para destacar */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- LOGO --- */
+.nav-logo-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  height: 100%;
+}
+
+.nav-logo-img {
+  max-height: 60px; /* Ajuste o tamanho da logo grande aqui */
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.nav-logo-img:hover {
+  transform: scale(1.05);
+}
+
+/* Estilos para a opção de logo pequena + texto */
+.nav-logo-img-small {
+    max-height: 40px; /* Ajuste o tamanho da logo pequena aqui */
+    width: auto;
+    margin-right: 10px;
+}
+
+.nav-logo-text {
+    color: var(--texto-escuro);
+    font-weight: 700;
+    font-size: 1.1rem;
+    white-space: nowrap; /* Impede a quebra de linha do texto */
+    transition: color 0.3s ease;
+}
+
+.nav-logo-container:hover .nav-logo-text {
+    color: var(--dourado-principal);
+}
+
+
+/* --- MENU DESKTOP --- */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--texto-escuro); /* Texto escuro para contrastar com o fundo claro */
+  text-decoration: none;
+  font-weight: 500;
+  padding: 5px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--dourado-principal);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--dourado-principal);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.nav-link.active {
+  color: var(--dourado-principal);
+  font-weight: 700;
+}
+
+.nav-link.active::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* --- MENU HAMBÚRGUER (MOBILE) --- */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  z-index: 1001; /* Garante que fique acima do menu mobile */
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--texto-escuro); /* Cor da barra do hambúrguer no tema claro */
+  border-radius: 2px;
+}
+
+.hamburger.active .bar:nth-child(2) { opacity: 0; }
+.hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+
+/* --- MEDIA QUERY PARA RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .bar {
+    background-color: var(--texto-escuro); /* Mantém a cor da barra do hambúrguer consistente */
+  }
+
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--fundo-menu-mobile); /* Fundo escuro para o menu mobile para contraste */
+    width: 100%;
+    height: 100vh;
+    transition: left 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+    gap: 3rem;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-link {
+    font-size: 1.5rem;
+    color: var(--texto-menu-mobile); /* Texto claro para o menu mobile */
+  }
+
+  /* Ajustes para a logo em mobile se necessário */
+  .nav-logo-img, .nav-logo-img-small {
+    max-height: 50px; /* Reduz um pouco a logo em mobile se ficar muito grande */
+  }
+}
