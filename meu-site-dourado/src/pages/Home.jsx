@@ -13,8 +13,8 @@ import './Home.css';
 // Componente para os números que se animam
 function StatItem({ number, suffix, label }) {
   const { ref, inView } = useInView({
-    triggerOnce: true, // Anima apenas uma vez
-    threshold: 0.5, // Começa a animação quando 50% do item está visível
+    triggerOnce: true,
+    threshold: 0.5,
   });
 
   return (
@@ -39,16 +39,19 @@ function Home() {
 
   return (
     <div className="home-page">
-      {/* ========== SEÇÃO HERO COM PARALLAX ========== */}
-      <section className="hero-section-v3">
+      {/* ========== SEÇÃO HERO COM PARALLAX E NOVO LAYOUT ========== */}
+      <section className="hero-section-v4"> {/* <-- NOVA CLASSE AQUI */}
         <Parallax speed={-20} className="hero-parallax-bg-wrapper">
           <div className="hero-background-image"></div>
         </Parallax>
-        <div className="hero-overlay"></div>
-        <div className="hero-content-v2" data-aos="zoom-in">
-          <h1>Sua Aposentadoria Planejada, Seu Futuro Garantido.</h1>
-          <p>Assessoria completa e humanizada para você navegar pelo INSS sem estresse e com a certeza do melhor benefício.</p>
-          <a href="#contato" className="cta-button-hero">Quero planejar meu futuro</a>
+        <div className="hero-overlay-dark"></div> {/* <-- OVERLAY ESCURO */}
+        <div className="hero-content-v4" data-aos="fade-up"> {/* <-- NOVA CLASSE AQUI */}
+          <h1>
+  Sua aposentadoria planejada, <br /> seu futuro garantido.
+</h1>
+<p>Assessoria Previdenciária por Liliane Castro</p>
+          {/* O CTA button pode ser movido para uma seção abaixo ou um botão no header,
+              ou adicionado aqui de outra forma se for essencial logo no Hero */}
         </div>
         <div className="scroll-down-indicator">
             <FontAwesomeIcon icon={faChevronDown} />

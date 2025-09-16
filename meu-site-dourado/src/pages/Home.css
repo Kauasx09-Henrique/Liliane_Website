@@ -21,18 +21,16 @@
 }
 
 /* ======================================== */
-/* ========== HERO SECTION V3 (COM PARALLAX) ========== */
+/* ========== HERO SECTION V4 (ESTILO DOTTI) ========== */
 /* ======================================== */
-.hero-section-v3 {
+.hero-section-v4 { /* <-- NOVA CLASSE */
   position: relative;
-  height: 95vh; /* Altura um pouco menor que a tela inteira */
+  height: 95vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
+  align-items: flex-end; /* Alinha o conteúdo na parte inferior */
+  padding: 4rem; /* Mais padding para o conteúdo */
   color: var(--cor-branco);
-  overflow: hidden; /* Essencial para o parallax funcionar bem */
+  overflow: hidden;
 }
 
 .hero-parallax-bg-wrapper {
@@ -46,27 +44,46 @@
 
 .hero-background-image {
   width: 100%;
-  height: 140%; /* Imagem maior que a seção para permitir o movimento */
-  /* A ÚNICA MUDANÇA ESTÁ AQUI NESTA LINHA */
-  background-image: url('https://images.pexels.com/photos/2885320/pexels-photo-2885320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  height: 140%;
+  background-image: url('../../public/fundo.jpg');
   background-size: cover;
-  background-position: center center; /* Ajustado para a nova imagem */
+  background-position: center 30%; /* Ajuste a posição conforme sua imagem */
   position: absolute;
-  top: -20%; /* Começa um pouco para cima */
+  top: -20%;
   left: 0;
 }
 
-.hero-overlay {
+.hero-overlay-dark { /* <-- NOVO OVERLAY ESCURO PARA TEXTO CLARO */
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(32, 110, 72, 0.8), rgba(32, 110, 72, 0.5));
+  background-color: rgba(0, 0, 0, 0.6); /* Cor de overlay escura */
   backdrop-filter: blur(2px);
+  z-index: 0; /* Abaixo do conteúdo, mas acima da imagem */
 }
 
-.hero-content-v2 {
+.hero-content-v4 { /* <-- NOVA CLASSE */
   position: relative;
-  z-index: 2;
+  z-index: 2; /* Garante que o conteúdo fique acima do overlay */
   max-width: 800px;
+  text-align: left; /* Alinha o texto à esquerda */
+  margin-left: 0; /* Remove margem automática para alinhar à esquerda */
+  padding-bottom: 50px; /* Espaço do final da tela */
+}
+
+.hero-content-v4 h1 {
+  font-family: 'Times New Roman', serif; /* Fonte mais clássica, como no Dotti */
+  font-size: clamp(3rem, 6vw, 4.5rem); /* Título maior */
+  font-weight: 700;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+  line-height: 1.1; /* Linhas mais próximas */
+  margin-bottom: 1rem;
+}
+
+.hero-content-v4 p {
+  font-size: 1.3rem;
+  margin: 0; /* Remove margens extras */
+  color: rgba(255, 255, 253, 0.95);
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 
 .scroll-down-indicator {
@@ -77,6 +94,7 @@
     font-size: 1.5rem;
     color: rgba(255, 255, 255, 0.7);
     animation: bounce 2s infinite;
+    z-index: 2; /* Garante que fique visível */
 }
 
 @keyframes bounce {
@@ -229,7 +247,7 @@
 .final-cta-section {
   padding: 6rem 2rem;
   text-align: center;
-  background: linear-gradient(135deg, var(--cor-verde), #2a8a5c); /* Gradiente sutil */
+  background: linear-gradient(135deg, var(--cor-verde), #2a8a5c);
   color: var(--cor-branco);
 }
 
@@ -267,4 +285,33 @@
   background: transparent;
   color: var(--cor-branco);
   transform: scale(1.05);
+}
+
+/* ======================================== */
+/* ========== RESPONSIVIDADE ========== */
+/* ======================================== */
+@media (max-width: 992px) {
+    .hero-content-v4 {
+        padding-bottom: 30px;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+    }
+}
+@media (max-width: 768px) {
+    .stats-section {
+      flex-direction: column;
+      gap: 3rem;
+    }
+    .testimonial-content blockquote {
+      padding-left: 1.5rem;
+    }
+    .hero-section-v4 {
+        height: 70vh; /* Ajusta a altura em telas menores */
+        padding: 2rem;
+    }
+    .hero-content-v4 h1 {
+        font-size: clamp(2.5rem, 6vw, 3.5rem);
+    }
+    .hero-content-v4 p {
+        font-size: 1.1rem;
+    }
 }
