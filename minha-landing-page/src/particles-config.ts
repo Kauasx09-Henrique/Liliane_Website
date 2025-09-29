@@ -3,7 +3,6 @@ import type { ISourceOptions } from "tsparticles-engine";
 export const options: ISourceOptions = {
   background: { color: { value: "transparent" } },
   fpsLimit: 120,
-
   interactivity: {
     events: {
       onHover: { enable: true, mode: "repulse" },
@@ -13,15 +12,9 @@ export const options: ISourceOptions = {
     modes: {
       repulse: { distance: 100, duration: 0.4 },
       push: { quantity: 4 },
-      bubble: {
-        distance: 200,
-        size: 15,
-        duration: 2,
-        color: { value: "#C9A948" },
-      },
+      bubble: { distance: 200, size: 15, duration: 2, color: { value: "#C9A948" } },
     },
   },
-
   particles: {
     color: { value: ["#C9A948", "#e8d9a5", "#ffffff"] },
 
